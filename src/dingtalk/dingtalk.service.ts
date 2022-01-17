@@ -27,8 +27,11 @@ export class DingtalkService {
         map((res) => {
           const { errcode, errmsg } = res.data;
           return {
-            code: errcode,
-            message: errmsg,
+            status: {
+              message: 'success',
+            },
+            errcode,
+            errmsg,
           };
         }),
       );
